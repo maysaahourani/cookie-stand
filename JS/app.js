@@ -534,13 +534,12 @@ const footer = function () {
     totalCookies += parseInt(Shops.allShops[j].numOfCookPerHour[j]);
   }
   th3.textContent = totalCookies;
-  const th4 = document.createElement('th');
-  tr.appendChild(th4);
-  th4.textContent = seattle.totalNumOfCook + Tokoyo.totalNumOfCook + Dubai.totalNumOfCook + Paris.totalNumOfCook + Lima.totalNumOfCook;
+  // const th4 = document.createElement('th');
+  // tr.appendChild(th4);
+  // th4.textContent = seattle.totalNumOfCook + Tokoyo.totalNumOfCook + Dubai.totalNumOfCook + Paris.totalNumOfCook + Lima.totalNumOfCook;
 };
 
 
-Shops.allShops = [];
 footer();
 const formElement = document.getElementById('addnewshop');
 formElement.addEventListener('submit', function (event) {
@@ -554,5 +553,7 @@ formElement.addEventListener('submit', function (event) {
   formElement.reset();
   shop.getRandom(minCust1, maxCust2);
   shop.render();
+  footer();
+
 });
 console.log(Shops.allShops);
